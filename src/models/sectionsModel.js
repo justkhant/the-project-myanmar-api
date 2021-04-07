@@ -13,7 +13,7 @@ const dialSchema = new Schema(
   {
     topic: String,
     content: String,
-    images: String,
+    images: [String],
   },
   {
     _id: 0,

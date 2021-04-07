@@ -16,10 +16,12 @@ const env = envalid.cleanEnv(process.env, {
   WEBSITES_PORT: port(),
   WEBSITES_CONTEXT_PATH: str(),
   WEBSITES_MONGODB_URL: str(),
+  WEBSITES_API_SECRET: str(),
 });
 
 module.exports = {
   VAR_PORT: env.WEBSITES_PORT,
   VAR_CONTEXT_PATH: env.WEBSITES_CONTEXT_PATH,
   VAR_MONGODB_URL: env.WEBSITES_MONGODB_URL,
+  VAR_API_SECRET: env.WEBSITES_API_SECRET,
 };
