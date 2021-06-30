@@ -67,3 +67,4 @@ typings/
 
 # temporary testing files
 demo.json 
+node_modules
