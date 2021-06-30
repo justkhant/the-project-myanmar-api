@@ -20,11 +20,14 @@ const helmet = require('helmet'); // secure HTTP Headers returned by your Expres
 // Environment Configurations
 const envConfiguration = require('./src/modules/envConfiguration');
 const appPort = envConfiguration.VAR_PORT;
-// const appContextPath = envConfiguration.VAR_CONTEXT_PATH;
+const appContextPath = envConfiguration.VAR_CONTEXT_PATH;
 const mongoPath = envConfiguration.VAR_MONGODB_URL;
 
 // Logger
 const LOGGER = require('./src/logger/logger');
+
+// Routes
+const sectionsRoute = require('./src/routes/sectionsRoute');
 
 // Middlewares Set-up
 app.use(cors({ origin: '*' }));
@@ -41,6 +44,7 @@ app.use(mongoSanitize());
 app.use(compression());
 
 // Routes
+app.use(appContextPath, sectionsRoute);
 
 // MongoDB Set-up
 mongoose.Promise = global.Promise;

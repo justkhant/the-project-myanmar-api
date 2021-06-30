@@ -7,7 +7,7 @@
  */
 
 const log4js = require('log4js');
-const logger = log4js.logger();
+const logger = log4js.getLogger();
 const debugLevel = 'DEBUG';
 
 log4js.configure({
