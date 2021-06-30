@@ -32,7 +32,6 @@ const CONSTANTS = require('../constants/constants');
  * @returns response with all the sections
  */
 router.get('/sections', validateHeaders, async (req, res) => {
-  //   const responseObj = {};
   try {
     LOGGER.info(`Entering into /sections route in :: ${FILE_NAME}`);
     const result = await sectionsService.getAllSections();
