@@ -48,7 +48,7 @@ app.use(appContextPath, sectionsRoute);
 
 // MongoDB Set-up
 mongoose.Promise = global.Promise;
-mongoose.connect(mongoPath);
+mongoose.connect(mongoPath, { useUnifiedTopology: true, useNewUrlParser: true });
 mongoose.set('debug', true);
 
 // Listening for requests
