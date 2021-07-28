@@ -34,7 +34,13 @@ const CONSTANTS = require('../constants/constants');
 router.get('/sections', validateHeaders, async (req, res) => {
   try {
     LOGGER.info(`Entering into /sections route in :: ${FILE_NAME}`);
-    const result = await sectionsService.getAllSections();
+    let result;
+    // if query params is passed in request, get that specific section
+    if (req.query && Object.keys(req.query).length > 0) {
+      result = await sectionsService.getSection(req);
+    } else {
+      result = await sectionsService.getAllSections();
+    }
     LOGGER.info(`Success in /sections route in :: ${FILE_NAME}`);
     res.send(result);
   } catch (error) {
