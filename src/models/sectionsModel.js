@@ -9,22 +9,14 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const dialSchema = new Schema(
-  {
-    topic: String,
-    content: String,
-    images: [String],
-  },
-  {
-    _id: 0,
-  },
-);
-
 const sectionsSchema = new Schema(
   {
-    title: String,
-    containsDial: Boolean,
-    dial: [dialSchema],
+    title: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    data: Object,
   },
   {
     timestamps: {
