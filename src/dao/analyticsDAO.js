@@ -1,6 +1,6 @@
 /**
- * @file 
- * @author 
+ * @file analyticsDAO.js
+ * @author tripletk
  * @version 1.0
  * @createdDate 02/15/2022
  * @copyright Team Galone
@@ -15,13 +15,13 @@ const analyticsModel = require('../models/analyticsModel');
 
 /**
  * @description Get all documents
- * @memberof 
+ * @memberof analyticsDAO
  * @function findAll
  * @param {Object} query
  * @param {Object} projection
  * @returns array of mongoDB documents
  */
- async function findAll(query) {
+async function findAll(query) {
   try {
     LOGGER.info(`Entering into findAll() of :: ${FILE_NAME}`);
     const result = await analyticsModel.find(query);
@@ -44,7 +44,7 @@ const analyticsModel = require('../models/analyticsModel');
  * @param {Object} arrayFilters
  * @returns updated document
  */
-async function update(query, data) {
+async function update(query) {
   try {
     const result = await analyticsModel.save(query, {
       timestamps: true,
@@ -54,7 +54,6 @@ async function update(query, data) {
     throw new Error(error);
   }
 }
-
 
 module.exports = {
   findAll,

@@ -9,7 +9,6 @@
 // Express
 const express = require('express');
 const app = express();
-const router = app.router();
 const mongoose = require('mongoose'); // object relational mapping to MongoDB
 // Middlewares
 const xss = require('xss-clean'); // sanitize user input coming from POST body, GET queries & url params

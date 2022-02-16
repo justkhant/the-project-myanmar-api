@@ -1,6 +1,6 @@
 /**
  * @file analyticsRoute.js
- * @author 
+ * @author tripletk
  * @version 1.0
  * @createdDate 02/15/2022
  * @copyright Team Galone

@@ -1,6 +1,6 @@
 /**
  * @file analyticsService.js
- * @author 
+ * @author tripletk
  * @version 1.0
  * @createdDate 02/15/2022
  * @copyright Team Galone
@@ -15,7 +15,7 @@ const analyticsDAO = require('../dao/analyticsDAO');
 
 /**
  * @description Get all sections of the website
- * @memberof sectionsService
+ * @memberof analyticsService
  * @function getAllSections
  * @returns array of mongoDB documents
  */
@@ -34,7 +34,7 @@ async function getAllAnalyticsRecords() {
 
 /**
  * @description Update/upsert analytics document
- * @memberof 
+ * @memberof analyticsService
  * @function updateSection
  * @returns updated mongo document
  */
