@@ -1,6 +1,6 @@
 /**
  * @file sectionsModel.js
- * @author 
+ * @author Harry Htet
  * @version 1.0
  * @createdDate 03/29/2021
  * @copyright Team Galone
