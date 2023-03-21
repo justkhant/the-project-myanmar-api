@@ -27,6 +27,7 @@ const mongoPath = envConfiguration.VAR_MONGODB_URL;
 const LOGGER = require('./src/logger/logger');
 
 // Routes
+const analyticsRoute = require('./src/routes/analyticsRoute');
 const sectionsRoute = require('./src/routes/sectionsRoute');
 
 // Middlewares Set-up
@@ -44,6 +45,7 @@ app.use(mongoSanitize());
 app.use(compression());
 
 // Routes
+app.use(appContextPath, analyticsRoute);
 app.use(appContextPath, sectionsRoute);
 
 // MongoDB Set-up
