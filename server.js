@@ -30,7 +30,7 @@ const LOGGER = require('./src/logger/logger');
 const sectionsRoute = require('./src/routes/sectionsRoute');
 
 // Middlewares Set-up
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: ['https://www.theprojectmyanmar.com', 'http://localhost:3000'] }));
 app.set('view engine', 'html');
 
 // parse json body & urlencoded request body

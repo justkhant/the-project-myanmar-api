@@ -20,7 +20,7 @@ const env = envalid.cleanEnv(process.env, {
 });
 
 module.exports = {
-  VAR_PORT: process.env.PORT || 3000, // env.WEBSITES_PORT || env.PORT,
+  VAR_PORT: process.env.PORT || 8080, // env.WEBSITES_PORT || env.PORT,
   VAR_CONTEXT_PATH: env.WEBSITES_CONTEXT_PATH,
   VAR_MONGODB_URL: env.WEBSITES_MONGODB_URL,
   VAR_API_SECRET: env.WEBSITES_API_SECRET,
