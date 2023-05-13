@@ -34,6 +34,26 @@ async function findAll(query, projection) {
 }
 
 /**
+ * @description Get specific document
+ * @memberof sectionsDAO
+ * @function findOne
+ * @param {Object} query
+ * @param {Object} projection
+ * @returns mongoDB document
+ */
+ async function findOne(query, projection) {
+  try {
+    LOGGER.info(`Entering into findOne() of :: ${FILE_NAME}`);
+    const result = await sectionsModel.findOne(query, projection);
+    LOGGER.info(`Success in findOne() of :: ${FILE_NAME}`);
+    return result;
+  } catch (error) {
+    LOGGER.error(`Error in findOne() of :: ${FILE_NAME} :: ${error}`);
+    throw new Error(error);
+  }
+}
+
+/**
  * @description Update/Upsert document for the specified query
  * @memberof sectionsDAO
  * @function findAll
@@ -64,5 +84,6 @@ async function update(query, updateQuery, projection, upsertFlag, arrayFilters) 
 
 module.exports = {
   findAll,
+  findOne,
   update,
 };

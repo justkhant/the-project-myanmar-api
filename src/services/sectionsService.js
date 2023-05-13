@@ -34,6 +34,26 @@ async function getAllSections() {
 }
 
 /**
+ * @description Get specific section of the website
+ * @memberof sectionsService
+ * @function getSection
+ * @returns mongoDB document
+ */
+ async function getSection(req) {
+  try {
+    LOGGER.info(`Entering into getSection() of :: ${FILE_NAME}`);
+    const { query } = req;
+    const projection = null;
+    const result = await sectionsDAO.findOne(query, projection);
+    LOGGER.info(`Success in getSection() of :: ${FILE_NAME}`);
+    return result;
+  } catch (error) {
+    LOGGER.error(`Error in getSection() of :: ${FILE_NAME} :: ${error}`);
+    throw new Error(error);
+  }
+}
+
+/**
  * @description Update/upsert section document
  * @memberof sectionsService
  * @function updateSection
@@ -62,4 +82,5 @@ async function updateSection(req) {
 module.exports = {
   getAllSections,
   updateSection,
+  getSection,
 };
